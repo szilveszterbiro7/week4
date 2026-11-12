@@ -1,25 +1,42 @@
 [gd_scene format=3 uid="uid://c5yw16rpopkcs"]
 
+[ext_resource type="Script" uid="uid://cu7uf7lmetgai" path="res://Scenes/level_1.gd" id="1_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://br1033xngyq1f" path="res://Scenes/player.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://4is7qswmwhxo" path="res://Scenes/clone.tscn" id="2_8ffim"]
+[ext_resource type="Texture2D" uid="uid://5k2aqr88auh4" path="res://Assets/Clone2.png" id="3_xfk5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
-size = Vector2(34.34375, 2.34375)
+size = Vector2(39.96875, 2.34375)
 
 [node name="Level1" type="Node2D" unique_id=43157250]
+script = ExtResource("1_7p6j4")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=355745800]
 position = Vector2(320, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1773694295]
-position = Vector2(257.5, 260.5)
+position = Vector2(318, 355)
 scale = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_ce5me")
 
 [node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=1857345896]
-position = Vector2(-282.23038, 236)
-scale = Vector2(12.769154, 11.881189)
+position = Vector2(-308.00003, 333)
+scale = Vector2(14.759826, 11.881189)
 color = Color(0.27318835, 0.27108598, 0.44716048, 1)
-polygon = PackedVector2Array(-1.1566668, -0.9833334, 53.092415, -0.90766907, 59.12332, -0.8992615, 84.89667, -0.8633334, 85.380005, 5.4133334, 42.164593, 5.1709433, 40.75203, 5.163021, -0.7933334, 4.9300003)
+polygon = PackedVector2Array(-1.1566668, -0.9833334, 53.092415, -0.90766907, 59.12332, -0.8992615, 84.89667, -0.8633334, 85.36196, 5.3866653, 42.164593, 5.1709433, 40.75203, 5.163021, -0.7933334, 4.9300003)
 
 [node name="Player" parent="." unique_id=1774187077 instance=ExtResource("1_vk57k")]
-position = Vector2(463, 126)
+position = Vector2(89, 385)
+
+[node name="Clone1" parent="." unique_id=1393418881 instance=ExtResource("2_8ffim")]
+visible = false
+position = Vector2(407, 379)
+
+[node name="Clone2" parent="." unique_id=539241314 instance=ExtResource("2_8ffim")]
+visible = false
+position = Vector2(960, 350)
+
+[node name="Sprite2D" parent="Clone2" index="1" unique_id=1240714779]
+texture = ExtResource("3_xfk5q")
+
+[editable path="Clone2"]

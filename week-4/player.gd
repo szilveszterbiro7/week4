@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed=200.0
-@export var jump_velocity=-350.0
+@export var jump_velocity=-550.0
 
 var gravity=900
 
@@ -14,4 +14,3 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y=jump_velocity
 	move_and_slide()
-	print("On floor: ", is_on_floor(), " | Position: ", global_position)
