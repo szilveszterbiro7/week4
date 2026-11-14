@@ -17,7 +17,7 @@ func on_body_entered(body):
 		return
 	if body.name=="Player":
 		if next_scene!=null:
-			transitioning=false
+			transitioning=true
 			get_tree().call_deferred("change_scene_to_packed", next_scene)
 		else:
 			label.text="Level\ncomplete!"

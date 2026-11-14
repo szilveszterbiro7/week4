@@ -6,6 +6,8 @@
 size = Vector2(125, 251.5)
 
 [node name="ExitGate" type="Area2D" unique_id=103256322]
+collision_layer = 0
+collision_mask = 15
 script = ExtResource("1_mwkva")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109844510]
