@@ -8,6 +8,8 @@ extends Node2D
 var split=false
 var active_clone=1
 
+@export var unite_distance=250
+
 func _ready():
 	player.show()
 	player.set_physics_process(true)
@@ -19,8 +21,11 @@ func _ready():
 	clone1.get_node("CollisionShape2D").set_deferred("disabled", true)
 	clone2.get_node("CollisionShape2D").set_deferred("disabled", true)
 func _process(_delta):
-	if Input.is_action_just_pressed("split") and not split:
-		split_player()
+	if Input.is_action_just_pressed("split"):
+		if not split:
+			split_player()
+		else:
+			try_unite()
 	if Input.is_action_just_pressed("change_character") and split:
 		switch_clone()
 func split_player():
@@ -48,3 +53,22 @@ func switch_clone():
 		active_clone=1
 		clone1.active=true
 		clone2.active=false
+func try_unite():
+	var distance=clone1.global_position.distance_to(clone2.global_position)
+	if distance<=unite_distance:
+		unite()
+func unite():
+	split=false
+	var middle_position=(clone1.global_position+clone2.global_position)/2
+	clone1.active=false
+	clone2.active=false
+	clone1.hide()
+	clone2.hide()
+	clone1.process_mode=Node.PROCESS_MODE_DISABLED
+	clone2.process_mode=Node.PROCESS_MODE_DISABLED
+	clone1.get_node("CollisionShape2D").set_deferred("disabled", true)
+	clone2.get_node("CollisionShape2D").set_deferred("disabled", true)
+	player.global_position=middle_position
+	player.show()
+	player.set_physics_process(true)
+	player.get_node("CollisionShape2D").set_deferred("disabled", false)

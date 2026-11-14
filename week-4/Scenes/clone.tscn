@@ -17,3 +17,9 @@ shape = SubResource("RectangleShape2D_ce5me")
 position = Vector2(114, 126)
 scale = Vector2(0.496, 0.5)
 texture = ExtResource("1_50nb2")
+
+[node name="Indicator" type="Polygon2D" parent="." unique_id=772757268]
+position = Vector2(78, -2)
+color = Color(0.16471481, 0.50127673, 0.21470079, 1)
+polygon = PackedVector2Array(68, 42.799995, 68, 42.799995, 36.799988, 85.19999, 0.7999878, 42.799995, 26.399994, 41.200005, 24.799988, 41.999992, 44, 41.200005, 44.799988, 42.799995)
+uv = PackedVector2Array(68, 42.799995, 68, 42.799995, 40, 84.4, 0.7999878, 42.799995, 23.199982, 42.799995, 23.199982, -18, 41.599976, -17.199997, 43.200012, 38.799995)
