@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://3xvfopas1u0d"]
+
+[ext_resource type="Script" uid="uid://lddqxqgeejke" path="res://exit_gate.gd" id="1_mwkva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8qpm"]
+size = Vector2(125, 251.5)
+
+[node name="ExitGate" type="Area2D" unique_id=103256322]
+script = ExtResource("1_mwkva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109844510]
+position = Vector2(138, 341.75)
+shape = SubResource("RectangleShape2D_k8qpm")
+
+[node name="Label" type="Label" parent="." unique_id=509864057]
+offset_left = 105.0
+offset_top = 143.0
+offset_right = 160.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 27
+text = "EXIT"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=532733155]
+offset_left = 79.0
+offset_top = 215.0
+offset_right = 199.0
+offset_bottom = 465.0
+color = Color(1.4920532e-06, 0.54928744, 0.116639756, 1)

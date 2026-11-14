@@ -15,7 +15,7 @@ size = Vector2(39.96875, 2.203125)
 a = Vector2(1285, 764)
 b = Vector2(1285, 4)
 
-[node name="Level1" type="Node2D" unique_id=43157250]
+[node name="Tutorial" type="Node2D" unique_id=43157250]
 script = ExtResource("1_7p6j4")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=355745800]
@@ -64,7 +64,7 @@ position = Vector2(-1280, -18)
 shape = SubResource("SegmentShape2D_ce5me")
 
 [node name="Door" parent="." unique_id=370755971 instance=ExtResource("6_evi0p")]
-position = Vector2(612, 304)
+position = Vector2(642, 40)
 
 [node name="TutorialUI" type="CanvasLayer" parent="." unique_id=981767687]
 script = ExtResource("7_lsmp6")

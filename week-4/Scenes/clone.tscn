@@ -24,3 +24,7 @@ scale = Vector2(0.5, 0.5)
 color = Color(0.16471481, 0.50127673, 0.21470079, 1)
 polygon = PackedVector2Array(68, 42.799995, 68, 42.799995, 36.799988, 85.19999, 0.7999878, 42.799995, 26.399994, 41.200005, 24.799988, 41.999992, 44, 41.200005, 44.799988, 42.799995)
 uv = PackedVector2Array(68, 42.799995, 68, 42.799995, 40, 84.4, 0.7999878, 42.799995, 23.199982, 42.799995, 23.199982, -18, 41.599976, -17.199997, 43.200012, 38.799995)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=999519707]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
