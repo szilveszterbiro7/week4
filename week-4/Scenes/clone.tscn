@@ -26,5 +26,6 @@ polygon = PackedVector2Array(68, 42.799995, 68, 42.799995, 36.799988, 85.19999, 
 uv = PackedVector2Array(68, 42.799995, 68, 42.799995, 40, 84.4, 0.7999878, 42.799995, 23.199982, 42.799995, 23.199982, -18, 41.599976, -17.199997, 43.200012, 38.799995)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=999519707]
+zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true

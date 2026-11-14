@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://cywoixrc6qngl"]
+
+[ext_resource type="Script" uid="uid://57ccpe3yj8g2" path="res://Scenes/base_level.gd" id="1_lgosu"]
+[ext_resource type="PackedScene" uid="uid://br1033xngyq1f" path="res://Scenes/player.tscn" id="2_mhlpv"]
+[ext_resource type="PackedScene" uid="uid://4is7qswmwhxo" path="res://Scenes/clone.tscn" id="3_ng020"]
+[ext_resource type="Texture2D" uid="uid://5k2aqr88auh4" path="res://Assets/Clone2.png" id="4_vn2uo"]
+[ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="5_mtqcm"]
+[ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="6_mmf1u"]
+[ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="7_vn460"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
+size = Vector2(43.859375, 2.203125)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ce5me"]
+a = Vector2(1285, 764)
+b = Vector2(1285, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tox5"]
+size = Vector2(250, 39)
+
+[node name="Level2" type="Node2D" unique_id=43157250]
+script = ExtResource("1_lgosu")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=355745800]
+position = Vector2(320, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1773694295]
+position = Vector2(378.25, 359)
+scale = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_ce5me")
+
+[node name="ColorRect" type="ColorRect" parent="Ground" unique_id=1320071082]
+offset_left = -319.0
+offset_top = 322.0
+offset_right = 1081.0
+offset_bottom = 390.0
+color = Color(0, 0.27358776, 0.27511105, 1)
+
+[node name="Ground2" type="StaticBody2D" parent="." unique_id=1072270281]
+position = Vector2(-630, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2" unique_id=1710529049]
+position = Vector2(378.25, 359)
+scale = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_ce5me")
+
+[node name="ColorRect" type="ColorRect" parent="Ground2" unique_id=1237490590]
+offset_left = -319.0
+offset_top = 322.0
+offset_right = 1081.0
+offset_bottom = 390.0
+color = Color(0, 0.27358776, 0.27511105, 1)
+
+[node name="Player" parent="." unique_id=1774187077 instance=ExtResource("2_mhlpv")]
+position = Vector2(-956, 403)
+
+[node name="Clone1" parent="." unique_id=1393418881 instance=ExtResource("3_ng020")]
+visible = false
+position = Vector2(407, 379)
+
+[node name="Clone2" parent="." unique_id=539241314 instance=ExtResource("3_ng020")]
+visible = false
+position = Vector2(960, 350)
+
+[node name="Sprite2D" parent="Clone2" index="1" unique_id=1240714779]
+texture = ExtResource("4_vn2uo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1607458829]
+position = Vector2(114, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1022807082]
+shape = SubResource("SegmentShape2D_ce5me")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1991805257]
+position = Vector2(-1280, -18)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1448980268]
+position = Vector2(-956, 25)
+shape = SubResource("SegmentShape2D_ce5me")
+
+[node name="Door" parent="." unique_id=370755971 instance=ExtResource("5_mtqcm")]
+position = Vector2(-121, 33)
+
+[node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("6_mmf1u")]
+position = Vector2(-442, 230)
+door = NodePath("../Door")
+plate_type = 1
+
+[node name="Pressureplate2" parent="." unique_id=1845035222 node_paths=PackedStringArray("door") instance=ExtResource("6_mmf1u")]
+position = Vector2(-127, 538)
+door = NodePath("../Door2")
+plate_type = 1
+
+[node name="Door2" parent="." unique_id=722675094 instance=ExtResource("5_mtqcm")]
+position = Vector2(989, 40)
+
+[node name="Pressureplate3" parent="." unique_id=1619738442 node_paths=PackedStringArray("door") instance=ExtResource("6_mmf1u")]
+position = Vector2(569, 268)
+door = NodePath("../Door")
+plate_type = 2
+
+[node name="Pressureplate4" parent="." unique_id=199198324 node_paths=PackedStringArray("door") instance=ExtResource("6_mmf1u")]
+position = Vector2(996, 540)
+door = NodePath("../Door2")
+plate_type = 2
+
+[node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("7_vn460")]
+position = Vector2(1195, 181)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=468384940]
+position = Vector2(0, 61)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4" unique_id=2130240061]
+offset_left = -720.0
+offset_top = 420.0
+offset_right = -470.0
+offset_bottom = 460.0
+color = Color(0, 0.16585201, 0.16941264, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=115415709]
+position = Vector2(-595, 440.5)
+shape = SubResource("RectangleShape2D_2tox5")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=364735496]
+position = Vector2(283, -92)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D5" unique_id=471319649]
+offset_left = -720.0
+offset_top = 424.0
+offset_right = -470.0
+offset_bottom = 464.0
+color = Color(0, 0.1882353, 0.19215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1109789530]
+position = Vector2(-595, 443.5)
+shape = SubResource("RectangleShape2D_2tox5")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=2125820855]
+position = Vector2(952, 87)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D6" unique_id=195590860]
+offset_left = -720.0
+offset_top = 424.0
+offset_right = -470.0
+offset_bottom = 464.0
+color = Color(0, 0.1882353, 0.19215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=652044434]
+position = Vector2(-595, 443.5)
+shape = SubResource("RectangleShape2D_2tox5")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=652860202]
+position = Vector2(1285, -54)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D7" unique_id=1500828437]
+offset_left = -720.0
+offset_top = 424.0
+offset_right = -470.0
+offset_bottom = 464.0
+color = Color(0, 0.1882353, 0.19215687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1414984271]
+position = Vector2(-595, 443.5)
+shape = SubResource("RectangleShape2D_2tox5")
+
+[editable path="Clone2"]
