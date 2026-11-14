@@ -8,15 +8,18 @@ var bodies_on_plate=[]
 
 @export var door:StaticBody2D
 
+enum PlateType {ANY, BLUE, ORANGE}
+@export var plate_type:PlateType=PlateType.ANY
 func _ready():
 	body_entered.connect(on_body_entered)
 	body_exited.connect(on_body_exited)
+	visual.color=plate_color()
 func on_body_entered(body):
-	if body is CharacterBody2D:
+	if can_activate(body):
 		bodies_on_plate.append(body)
 		update_plate()
 func on_body_exited(body):
-	if body is CharacterBody2D:
+	if body in bodies_on_plate:
 		bodies_on_plate.erase(body)
 		update_plate()
 func update_plate():
@@ -26,6 +29,22 @@ func update_plate():
 		if door!=null:
 			door.activate_plate(self)
 	else:
-		visual.color=Color.RED
+		visual.color=plate_color()
 		if door!=null:
 			door.deactivate_plate(self)
+func can_activate(body):
+	if not body is CharacterBody2D:
+		return false
+	if plate_type==PlateType.ANY:
+		return true
+	elif plate_type==PlateType.BLUE:
+		return body.name=="Clone1"
+	elif plate_type==PlateType.ORANGE:
+		return body.name=="Clone2"
+	return false
+func plate_color():
+	if plate_type==PlateType.BLUE:
+		return Color.DODGER_BLUE
+	elif plate_type==PlateType.ORANGE:
+		return Color.ORANGE
+	return Color.RED

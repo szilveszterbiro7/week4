@@ -24,7 +24,7 @@ func _ready():
 	clone1.get_node("CollisionShape2D").set_deferred("disabled", true)
 	clone2.get_node("CollisionShape2D").set_deferred("disabled", true)
 	update_camera()
-func _process(_delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 		return
@@ -65,7 +65,12 @@ func switch_clone():
 func try_unite():
 	var distance=clone1.global_position.distance_to(clone2.global_position)
 	if distance<=unite_distance:
-		unite()
+		if can_unite():
+			unite()
+		else:
+			print("An obstacle is blocking the reunion!")
+	else:
+		print("Clones are too far apart!")
 func unite():
 	split=false
 	var middle_position=(clone1.global_position+clone2.global_position)/2
@@ -86,5 +91,17 @@ func update_camera():
 	player_camera.enabled=not split
 	clone1_camera.enabled= split and active_clone==1
 	clone2_camera.enabled=split and active_clone==2
-	
-	
+func can_unite():
+	var space_state=get_world_2d().direct_space_state
+	var start=clone1.get_node("CollisionShape2D").global_position
+	var end=clone2.get_node("CollisionShape2D").global_position
+	var query = PhysicsRayQueryParameters2D.create(start, end)
+	query.exclude=[clone1.get_rid(), clone2.get_rid(), player.get_rid()]
+	query.collide_with_bodies=true
+	query.collide_with_areas=false
+	query.hit_from_inside=true
+	var result=space_state.intersect_ray(query)
+	if not result.is_empty():
+		print("Obstacle detected: ", result["collider"].name)
+		return false
+	return true

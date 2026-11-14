@@ -66,7 +66,7 @@ shape = SubResource("SegmentShape2D_ce5me")
 position = Vector2(290, 37)
 
 [node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("6_didp7")]
-position = Vector2(-31, 539)
+position = Vector2(-31, 541)
 door = NodePath("../Door")
 
 [node name="Pressureplate2" parent="." unique_id=1845035222 node_paths=PackedStringArray("door") instance=ExtResource("6_didp7")]
@@ -95,12 +95,14 @@ position = Vector2(989, 40)
 [node name="Pressureplate3" parent="." unique_id=1619738442 node_paths=PackedStringArray("door") instance=ExtResource("6_didp7")]
 position = Vector2(525, 400)
 door = NodePath("../Door2")
+plate_type = 1
 
 [node name="Pressureplate4" parent="." unique_id=199198324 node_paths=PackedStringArray("door") instance=ExtResource("6_didp7")]
 position = Vector2(996, 540)
 door = NodePath("../Door2")
+plate_type = 2
 
 [node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("7_2a60c")]
-position = Vector2(1195, 176)
+position = Vector2(1195, 181)
 
 [editable path="Clone2"]
