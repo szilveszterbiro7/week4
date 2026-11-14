@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://5k2aqr88auh4" path="res://Assets/Clone2.png" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="6_evi0p"]
+[ext_resource type="Script" uid="uid://j0qgvywt8a45" path="res://Scenes/tutorial_ui.gd" id="7_lsmp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
-size = Vector2(39.96875, 2.34375)
+size = Vector2(39.96875, 2.203125)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ce5me"]
 a = Vector2(1285, 764)
@@ -21,7 +22,7 @@ script = ExtResource("1_7p6j4")
 position = Vector2(320, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1773694295]
-position = Vector2(318, 355)
+position = Vector2(316, 359)
 scale = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_ce5me")
 
@@ -33,7 +34,7 @@ offset_bottom = 390.0
 color = Color(0, 0.27358776, 0.27511105, 1)
 
 [node name="Player" parent="." unique_id=1774187077 instance=ExtResource("1_vk57k")]
-position = Vector2(89, 385)
+position = Vector2(73, 404)
 
 [node name="Clone1" parent="." unique_id=1393418881 instance=ExtResource("2_8ffim")]
 visible = false
@@ -47,7 +48,7 @@ position = Vector2(960, 350)
 texture = ExtResource("3_xfk5q")
 
 [node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("5_6444e")]
-position = Vector2(386, 541)
+position = Vector2(244, 540)
 door = NodePath("../Door")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1607458829]
@@ -63,6 +64,30 @@ position = Vector2(-1280, -18)
 shape = SubResource("SegmentShape2D_ce5me")
 
 [node name="Door" parent="." unique_id=370755971 instance=ExtResource("6_evi0p")]
-position = Vector2(934, 304)
+position = Vector2(612, 304)
+
+[node name="TutorialUI" type="CanvasLayer" parent="." unique_id=981767687]
+script = ExtResource("7_lsmp6")
+
+[node name="Title" type="Label" parent="TutorialUI" unique_id=525797486]
+offset_left = 420.0
+offset_top = 7.0
+offset_right = 894.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 60
+text = "TUTORIAL LEVEL"
+
+[node name="Instructions" type="Label" parent="TutorialUI" unique_id=1057831189]
+offset_left = 242.0
+offset_top = 190.0
+offset_right = 620.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 35
+text = "Press A and D to move"
+horizontal_alignment = 1
+
+[node name="Pressureplate2" parent="." unique_id=1479688761 node_paths=PackedStringArray("door") instance=ExtResource("5_6444e")]
+position = Vector2(928, 539)
+door = NodePath("../Door")
 
 [editable path="Clone2"]

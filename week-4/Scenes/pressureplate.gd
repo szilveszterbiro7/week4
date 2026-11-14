@@ -24,8 +24,8 @@ func update_plate():
 	if activated:
 		visual.color=Color.GREEN
 		if door!=null:
-			door.open_door()
+			door.activate_plate(self)
 	else:
 		visual.color=Color.RED
 		if door!=null:
-			door.close_door()
+			door.deactivate_plate(self)
