@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bj2vhjs201u2"]
+
+[ext_resource type="Script" uid="uid://cev22mef1fccs" path="res://Scenes/timed_plate.gd" id="1_mqcqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
+size = Vector2(139.5, 26)
+
+[node name="TimedPlate" type="Area2D" unique_id=1516984929]
+script = ExtResource("1_mqcqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870691687]
+position = Vector2(188.25, 119)
+shape = SubResource("RectangleShape2D_ce5me")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=813104661]
+offset_left = 116.0
+offset_top = 112.0
+offset_right = 260.0
+offset_bottom = 134.0
+color = Color(0.42557102, 0.1661568, 0.50725925, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1343448203]
+wait_time = 5.0
+one_shot = true

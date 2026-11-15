@@ -18,3 +18,12 @@ offset_top = 6.0
 offset_right = 41.0
 offset_bottom = 606.0
 color = Color(0.32624695, 0.17505726, 0.1182229, 1)
+
+[node name="TimerLabel" type="Label" parent="." unique_id=524402168]
+visible = false
+offset_left = 4.0
+offset_top = 283.0
+offset_right = 39.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 25
+text = "5.0"
