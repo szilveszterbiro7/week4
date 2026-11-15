@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b6ly12n3l63qt"]
+
+[ext_resource type="Texture2D" uid="uid://b5l44d4ajk7pt" path="res://Assets/EndingScreen.png" id="1_8xhws"]
+[ext_resource type="Script" uid="uid://clwmtjcnljhrw" path="res://Scenes/final_screen.gd" id="1_vi8pr"]
+
+[sub_resource type="FontVariation" id="FontVariation_gx7ph"]
+
+[node name="FinalScreen" type="Control" unique_id=757220485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vi8pr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=856479700]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 750.0
+texture = ExtResource("1_8xhws")
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=47883373]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 451.0
+offset_right = 943.0
+offset_bottom = 603.0
+theme_override_constants/separation = 50
+
+[node name="MainMenu" type="Button" parent="MenuButtons" unique_id=1117387781]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="Exit" type="Button" parent="MenuButtons" unique_id=1626470474]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "EXIT
+"
+
+[node name="Title" type="Label" parent="." unique_id=189548555]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 19.0
+offset_right = 1011.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0.66827965, 0.1462521, 0.08709327, 1)
+theme_override_fonts/font = SubResource("FontVariation_gx7ph")
+theme_override_font_sizes/font_size = 25
+text = "GAME COMPLETE\\You mastered the art of splitting yourself.\\Thank you for playing!"
+horizontal_alignment = 1
+paragraph_separator = "\\"

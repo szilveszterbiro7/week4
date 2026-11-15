@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="5_h6p24"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="6_vn7r1"]
 [ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="7_vwkqt"]
+[ext_resource type="PackedScene" uid="uid://o804ty1vvbn4" path="res://Scenes/level4.tscn" id="8_1x0xh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
 size = Vector2(43.859375, 2.203125)
@@ -115,6 +116,7 @@ plate_type = 2
 
 [node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("7_vwkqt")]
 position = Vector2(1195, 181)
+next_scene = ExtResource("8_1x0xh")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=468384940]
 position = Vector2(0, 61)
