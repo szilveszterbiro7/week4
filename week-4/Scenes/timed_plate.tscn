@@ -6,6 +6,8 @@
 size = Vector2(139.5, 26)
 
 [node name="TimedPlate" type="Area2D" unique_id=1516984929]
+collision_layer = 0
+collision_mask = 14
 script = ExtResource("1_mqcqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870691687]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="5_e7bnd"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="6_a6t2m"]
 [ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="7_mg2ol"]
+[ext_resource type="PackedScene" uid="uid://b6ly12n3l63qt" path="res://Scenes/final_screen.tscn" id="8_7u67b"]
 [ext_resource type="PackedScene" uid="uid://bj2vhjs201u2" path="res://Scenes/timed_plate.tscn" id="9_7u67b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
@@ -64,10 +65,14 @@ position = Vector2(-1419, 403)
 [node name="Clone1" parent="." unique_id=1393418881 instance=ExtResource("3_21ycj")]
 visible = false
 position = Vector2(407, 379)
+collision_layer = 4
+collision_mask = 33
 
 [node name="Clone2" parent="." unique_id=539241314 instance=ExtResource("3_21ycj")]
 visible = false
 position = Vector2(960, 350)
+collision_layer = 8
+collision_mask = 17
 
 [node name="Sprite2D" parent="Clone2" index="1" unique_id=1240714779]
 texture = ExtResource("4_egqhl")
@@ -90,6 +95,8 @@ position = Vector2(-648, 33)
 
 [node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("6_a6t2m")]
 position = Vector2(114, 539)
+collision_layer = 0
+collision_mask = 14
 door = NodePath("../Door2")
 
 [node name="Door2" parent="." unique_id=722675094 instance=ExtResource("5_e7bnd")]
@@ -100,7 +107,7 @@ position = Vector2(1010, 37)
 
 [node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("7_mg2ol")]
 position = Vector2(1195, 181)
-next_scene = null
+next_scene = ExtResource("8_7u67b")
 
 [node name="TimedPlate" parent="." unique_id=1516984929 node_paths=PackedStringArray("door") instance=ExtResource("9_7u67b")]
 position = Vector2(-1019, 203)
@@ -239,16 +246,16 @@ offset_right = -9.0
 offset_bottom = 59.0
 color = Color(0.13425371, 0, 0.94271684, 0.28627452)
 
-[node name="BlueBarrier2" type="StaticBody2D" parent="." unique_id=1320470018]
+[node name="OrangeBarrier" type="StaticBody2D" parent="." unique_id=1320470018]
 position = Vector2(26, 307)
 collision_layer = 16
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBarrier2" unique_id=799520846]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrangeBarrier" unique_id=799520846]
 position = Vector2(-32, -157.0625)
 shape = SubResource("RectangleShape2D_21ycj")
 
-[node name="ColorRect" type="ColorRect" parent="BlueBarrier2" unique_id=803041074]
+[node name="ColorRect" type="ColorRect" parent="OrangeBarrier" unique_id=803041074]
 offset_left = -50.0
 offset_top = -378.0
 offset_right = -9.0
