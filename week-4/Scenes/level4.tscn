@@ -118,7 +118,7 @@ position = Vector2(1195, 181)
 next_scene = ExtResource("8_7u67b")
 
 [node name="TimedPlate" parent="." unique_id=1516984929 node_paths=PackedStringArray("door") instance=ExtResource("9_7u67b")]
-position = Vector2(-1019, 203)
+position = Vector2(-1019, 206)
 door = NodePath("../Door")
 duration = 6.0
 
@@ -271,12 +271,12 @@ offset_bottom = 59.0
 color = Color(0.13425371, 0, 0.94271684, 0.28627452)
 
 [node name="TimedPlate2" parent="." unique_id=661485161 node_paths=PackedStringArray("door") instance=ExtResource("9_7u67b")]
-position = Vector2(524, 79)
+position = Vector2(524, 81)
 door = NodePath("../Door2")
 duration = 1.0
 
 [node name="TimedPlate3" parent="." unique_id=842273294 node_paths=PackedStringArray("door") instance=ExtResource("9_7u67b")]
-position = Vector2(589, 509)
+position = Vector2(589, 511)
 door = NodePath("../Door3")
 duration = 1.0
 
