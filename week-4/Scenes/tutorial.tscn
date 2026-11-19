@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjihlmt8wc5qt" path="res://Scenes/tutorial.gd" id="1_on4kn"]
 [ext_resource type="PackedScene" uid="uid://br1033xngyq1f" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://4is7qswmwhxo" path="res://Scenes/clone.tscn" id="2_8ffim"]
+[ext_resource type="Texture2D" uid="uid://o3umybgca71y" path="res://Assets/Background.png" id="2_70gml"]
 [ext_resource type="Texture2D" uid="uid://5k2aqr88auh4" path="res://Assets/Clone2.png" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="6_evi0p"]
@@ -19,6 +20,13 @@ b = Vector2(1285, 4)
 
 [node name="Tutorial" type="Node2D" unique_id=43157250]
 script = ExtResource("1_on4kn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2067702769]
+offset_left = -737.0
+offset_top = -97.0
+offset_right = 1659.0
+offset_bottom = 895.0
+texture = ExtResource("2_70gml")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=355745800]
 position = Vector2(320, 320)
@@ -50,7 +58,7 @@ position = Vector2(960, 350)
 texture = ExtResource("3_xfk5q")
 
 [node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("5_6444e")]
-position = Vector2(244, 540)
+position = Vector2(244, 543)
 door = NodePath("../Door")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1607458829]
@@ -72,10 +80,11 @@ position = Vector2(642, 40)
 script = ExtResource("7_lsmp6")
 
 [node name="Title" type="Label" parent="TutorialUI" unique_id=525797486]
-offset_left = 420.0
-offset_top = 7.0
-offset_right = 894.0
-offset_bottom = 90.0
+offset_left = 398.0
+offset_top = 42.0
+offset_right = 872.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "TUTORIAL LEVEL"
 
@@ -84,12 +93,13 @@ offset_left = 242.0
 offset_top = 190.0
 offset_right = 620.0
 offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Press A and D to move"
 horizontal_alignment = 1
 
 [node name="Pressureplate2" parent="." unique_id=1479688761 node_paths=PackedStringArray("door") instance=ExtResource("5_6444e")]
-position = Vector2(790, 539)
+position = Vector2(790, 542)
 door = NodePath("../Door")
 
 [node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("7_h2ono")]

@@ -15,10 +15,11 @@ position = Vector2(138, 341.75)
 shape = SubResource("RectangleShape2D_k8qpm")
 
 [node name="Label" type="Label" parent="." unique_id=509864057]
-offset_left = 105.0
+offset_left = 114.0
 offset_top = 143.0
-offset_right = 160.0
+offset_right = 169.0
 offset_bottom = 180.0
+theme_override_colors/font_color = Color(2.5870278e-07, 0.2036441, 0.07257152, 1)
 theme_override_font_sizes/font_size = 27
 text = "EXIT"
 horizontal_alignment = 1

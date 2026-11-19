@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://57ccpe3yj8g2" path="res://Scenes/base_level.gd" id="1_adi6q"]
 [ext_resource type="PackedScene" uid="uid://br1033xngyq1f" path="res://Scenes/player.tscn" id="2_7u67b"]
+[ext_resource type="Texture2D" uid="uid://tdmapa6cmj04" path="res://Assets/Background 2.png" id="2_21ycj"]
 [ext_resource type="PackedScene" uid="uid://4is7qswmwhxo" path="res://Scenes/clone.tscn" id="3_21ycj"]
 [ext_resource type="Texture2D" uid="uid://5k2aqr88auh4" path="res://Assets/Clone2.png" id="4_egqhl"]
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="5_e7bnd"]
@@ -28,6 +29,13 @@ size = Vector2(42.25, 427.875)
 
 [node name="Level1" type="Node2D" unique_id=43157250]
 script = ExtResource("1_adi6q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=354008618]
+offset_left = -2680.0
+offset_top = -540.0
+offset_right = 2146.0
+offset_bottom = 916.0
+texture = ExtResource("2_21ycj")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=355745800]
 position = Vector2(320, 320)

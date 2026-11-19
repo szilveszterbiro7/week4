@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fr0m02uipfos"]
 
-[ext_resource type="Script" uid="uid://57ccpe3yj8g2" path="res://Scenes/base_level.gd" id="1_45538"]
+[ext_resource type="Script" uid="uid://1bo1w0py6pdf" path="res://Scenes/ascent_tut.gd" id="1_45538"]
 [ext_resource type="PackedScene" uid="uid://br1033xngyq1f" path="res://Scenes/player.tscn" id="2_uu4t1"]
 [ext_resource type="PackedScene" uid="uid://4is7qswmwhxo" path="res://Scenes/clone.tscn" id="3_bc47j"]
 [ext_resource type="Texture2D" uid="uid://5k2aqr88auh4" path="res://Assets/Clone2.png" id="4_l5r0f"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="6_1xy2s"]
 [ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="7_en62i"]
 [ext_resource type="PackedScene" uid="uid://cbv8867hmqccs" path="res://Scenes/main_menu.tscn" id="8_45538"]
+[ext_resource type="Script" uid="uid://j0qgvywt8a45" path="res://Scenes/tutorial_ui.gd" id="9_uu4t1"]
+[ext_resource type="Texture2D" uid="uid://o3umybgca71y" path="res://Assets/Background.png" id="10_bc47j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
 size = Vector2(43.859375, 2.203125)
@@ -24,6 +26,13 @@ size = Vector2(255, 44)
 
 [node name="Ascent1" type="Node2D" unique_id=43157250]
 script = ExtResource("1_45538")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=693023837]
+offset_left = -833.0
+offset_top = -950.0
+offset_right = 2056.0
+offset_bottom = 861.0
+texture = ExtResource("10_bc47j")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=355745800]
 position = Vector2(320, 320)
@@ -70,7 +79,7 @@ shape = SubResource("SegmentShape2D_ce5me")
 position = Vector2(588, 44)
 
 [node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("6_1xy2s")]
-position = Vector2(270, 535)
+position = Vector2(270, 540)
 door = NodePath("../Door")
 
 [node name="Door2" parent="." unique_id=722675094 instance=ExtResource("5_g2y7e")]
@@ -202,5 +211,15 @@ color = Color(0, 0.27450982, 0.27450982, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1351840472]
 position = Vector2(-272.5, 35)
 shape = SubResource("RectangleShape2D_45538")
+
+[node name="TutorialUI" type="CanvasLayer" parent="." unique_id=246267734]
+script = ExtResource("9_uu4t1")
+
+[node name="Instructions" type="Label" parent="TutorialUI" unique_id=1836142212]
+offset_left = 2.0
+offset_top = 112.0
+offset_right = 538.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 25
 
 [editable path="Clone2"]
