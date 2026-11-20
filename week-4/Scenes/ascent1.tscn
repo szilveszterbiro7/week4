@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="5_g2y7e"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="6_1xy2s"]
 [ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="7_en62i"]
-[ext_resource type="PackedScene" uid="uid://cbv8867hmqccs" path="res://Scenes/main_menu.tscn" id="8_45538"]
+[ext_resource type="PackedScene" uid="uid://cxi563t88jsxy" path="res://Scenes/ascent2.tscn" id="9_bc47j"]
 [ext_resource type="Script" uid="uid://j0qgvywt8a45" path="res://Scenes/tutorial_ui.gd" id="9_uu4t1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
@@ -92,7 +92,7 @@ plate_type = 1
 
 [node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("7_en62i")]
 position = Vector2(1146, -424)
-next_scene = ExtResource("8_45538")
+next_scene = ExtResource("9_bc47j")
 
 [node name="BlueClimb" type="Area2D" parent="." unique_id=362056796 groups=["blue_climb"]]
 position = Vector2(82, 107)
