@@ -5,12 +5,18 @@ extends Area2D
 
 var activated=false
 var bodies_on_plate=[]
+var press_sound=preload("res://Assets/Sounds/plate.mp3")
+var plate_audio:AudioStreamPlayer
 
 @export var door:StaticBody2D
 
 enum PlateType {ANY, BLUE, ORANGE}
 @export var plate_type:PlateType=PlateType.ANY
 func _ready():
+	plate_audio=AudioStreamPlayer.new()
+	plate_audio.stream=press_sound
+	plate_audio.volume_db=-12
+	add_child(plate_audio)
 	body_entered.connect(on_body_entered)
 	body_exited.connect(on_body_exited)
 	visual.color=plate_color()
@@ -23,7 +29,10 @@ func on_body_exited(body):
 		bodies_on_plate.erase(body)
 		update_plate()
 func update_plate():
+	var was_activated=activated
 	activated=bodies_on_plate.size()>0
+	if activated and not was_activated:
+		plate_audio.play()
 	if activated:
 		visual.color=Color.GREEN
 		if door!=null:

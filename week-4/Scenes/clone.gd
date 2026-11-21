@@ -81,7 +81,7 @@ func animate_character(delta):
 		sprite.flip_h=true
 	if climbing:
 		if velocity.length()>10:
-			tilt=sin(animation_time*14)>0.06
+			tilt=sin(animation_time*14)*0.06
 	elif not grounded:
 		target_scale=visual_scale*Vector2(0.9,1.1)
 	elif abs(velocity.x)>10:
