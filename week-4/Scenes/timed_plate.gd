@@ -29,9 +29,10 @@ func on_body_entered(body):
 func on_timeout():
 	activated=false
 	visual.color=Color.PURPLE
-	label.text=str(duration)
+	if label!=null:
+		label.text=str(duration)
 	if door!=null:
 		door.deactivate_plate(self)
 func _process(_delta):
-	if activated:
+	if activated and label!=null:
 		label.text="%.1f"%timer.time_left

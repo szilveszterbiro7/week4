@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="6_0f0vp"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="7_bovv2"]
 [ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="8_5pj3c"]
-[ext_resource type="PackedScene" uid="uid://cbv8867hmqccs" path="res://Scenes/main_menu.tscn" id="9_2mpnl"]
+[ext_resource type="PackedScene" uid="uid://cjeanhg5ym0vh" path="res://Scenes/ascent3.tscn" id="9_c57ah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
 size = Vector2(97.953125, 2.203125)
@@ -107,7 +107,7 @@ plate_type = 2
 
 [node name="ExitGate" parent="." unique_id=103256322 instance=ExtResource("8_5pj3c")]
 position = Vector2(1352, -1849)
-next_scene = ExtResource("9_2mpnl")
+next_scene = ExtResource("9_c57ah")
 
 [node name="BlueClimb" type="Area2D" parent="." unique_id=362056796 groups=["blue_climb"]]
 position = Vector2(82, 107)
@@ -142,7 +142,7 @@ position = Vector2(176, 296.5)
 shape = SubResource("RectangleShape2D_2tox5")
 
 [node name="BlueClimb3" type="Area2D" parent="." unique_id=1629510728 groups=["blue_climb"]]
-position = Vector2(980, -1069)
+position = Vector2(980, -1060)
 collision_layer = 0
 collision_mask = 255
 
