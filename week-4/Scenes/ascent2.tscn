@@ -76,11 +76,18 @@ position = Vector2(-1280, -18)
 shape = SubResource("SegmentShape2D_ce5me")
 
 [node name="Door" parent="." unique_id=370755971 instance=ExtResource("6_0f0vp")]
-position = Vector2(1532, 36)
+position = Vector2(897, 36)
+
+[node name="Door4" parent="." unique_id=246222540 instance=ExtResource("6_0f0vp")]
+position = Vector2(1669, 10)
 
 [node name="Pressureplate" parent="." unique_id=169107418 node_paths=PackedStringArray("door") instance=ExtResource("7_bovv2")]
 position = Vector2(270, 540)
 door = NodePath("../Door")
+
+[node name="Pressureplate4" parent="." unique_id=552834725 node_paths=PackedStringArray("door") instance=ExtResource("7_bovv2")]
+position = Vector2(272, -495)
+door = NodePath("../Door4")
 
 [node name="Pressureplate2" parent="." unique_id=2089020057 node_paths=PackedStringArray("door") instance=ExtResource("7_bovv2")]
 position = Vector2(1139, -1380)
@@ -229,7 +236,7 @@ position = Vector2(-270.5, 35)
 shape = SubResource("RectangleShape2D_45538")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=82078415]
-position = Vector2(2138, 484)
+position = Vector2(1454, 533)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D4" unique_id=111476739]
 offset_left = -400.0
@@ -239,6 +246,34 @@ offset_bottom = 56.0
 color = Color(0, 0.27450982, 0.27450982, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=600642726]
+position = Vector2(-272.5, 35)
+shape = SubResource("RectangleShape2D_45538")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="." unique_id=1925660642]
+position = Vector2(1800, 448)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D18" unique_id=1733906058]
+offset_left = -400.0
+offset_top = 16.0
+offset_right = -146.0
+offset_bottom = 56.0
+color = Color(0, 0.27450982, 0.27450982, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18" unique_id=250284607]
+position = Vector2(-272.5, 35)
+shape = SubResource("RectangleShape2D_45538")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="." unique_id=664140421]
+position = Vector2(2128, 387)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D19" unique_id=987159226]
+offset_left = -400.0
+offset_top = 16.0
+offset_right = -146.0
+offset_bottom = 56.0
+color = Color(0, 0.27450982, 0.27450982, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D19" unique_id=622350642]
 position = Vector2(-272.5, 35)
 shape = SubResource("RectangleShape2D_45538")
 

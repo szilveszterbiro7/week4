@@ -11,8 +11,14 @@ var visual_scale:Vector2
 var visual_position:Vector2
 var animation_time=0
 var was_grounded=false
+var jump_sound=preload("res://Assets/Sounds/jump.mp3")
+var land_sound=preload("res://Assets/Sounds/landing.mp3")
+var sound_player:AudioStreamPlayer
 
 func _ready():
+	sound_player=AudioStreamPlayer.new()
+	sound_player.volume_db=-12
+	add_child(sound_player)
 	visual_scale=sprite.scale
 	visual_position=sprite.position
 func _physics_process(delta):
@@ -22,6 +28,7 @@ func _physics_process(delta):
 	velocity.x=direction*speed
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y=jump_velocity
+		play_sound(jump_sound)
 	move_and_slide()
 	animate_character(delta)
 func animate_character(delta):
@@ -41,8 +48,13 @@ func animate_character(delta):
 		tilt= sin(animation_time*14)*0.04
 	if grounded and not was_grounded:
 		sprite.scale=visual_scale*Vector2(1.15,0.85)
+		play_sound(land_sound)
 	var smoothing=1-exp(-14.0*delta)
 	sprite.scale=sprite.scale.lerp(target_scale, smoothing)
 	sprite.position=visual_position+Vector2(0, bob)
 	sprite.rotation=lerp_angle(sprite.rotation, tilt, smoothing)
 	was_grounded=grounded
+func play_sound(sound:AudioStream):
+	sound_player.stream=sound
+	sound_player.pitch_scale=randf_range(0.95,1.05)
+	sound_player.play()

@@ -10,10 +10,16 @@ extends Node2D
 
 var split=false
 var active_clone=1
+var split_sound=preload("res://Assets/Sounds/split.mp3")
+var unite_sound=preload("res://Assets/Sounds/unite.mp3")
+var transform_audio:AudioStreamPlayer
 
 @export var unite_distance=200
 
 func _ready():
+	transform_audio=AudioStreamPlayer.new()
+	transform_audio.volume_db=-12
+	add_child(transform_audio)
 	player.show()
 	player.set_physics_process(true)
 	clone1.hide()
@@ -36,6 +42,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("change_character") and split:
 		switch_clone()
 func split_player():
+	play_transform_sound(split_sound)
 	split=true
 	clone1.global_position = player.global_position + Vector2(-20, 0)
 	clone2.global_position = player.global_position + Vector2(20, 0)
@@ -72,6 +79,9 @@ func try_unite():
 	else:
 		print("Clones are too far apart!")
 func unite():
+	play_transform_sound(unite_sound)
+	clone1.stop_climbsound()
+	clone2.stop_climbsound()
 	split=false
 	var middle_position=(clone1.global_position+clone2.global_position)/2
 	clone1.active=false
@@ -105,3 +115,6 @@ func can_unite():
 		print("Obstacle detected: ", result["collider"].name)
 		return false
 	return true
+func play_transform_sound(sound:AudioStream):
+	transform_audio.stream=sound
+	transform_audio.play()

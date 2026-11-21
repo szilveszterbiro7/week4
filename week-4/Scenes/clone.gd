@@ -12,13 +12,25 @@ var visual_scale:Vector2
 var visual_position:Vector2
 var animation_time=0
 var was_grounded=false
+var jump_sound=preload("res://Assets/Sounds/jump.mp3")
+var land_sound=preload("res://Assets/Sounds/landing.mp3")
+var climb_sound=preload("res://Assets/Sounds/climb.mp3")
+var climb_audio:AudioStreamPlayer
+var sound_player:AudioStreamPlayer
 
 @onready var indicator=$Indicator
 @onready var sprite=$Sprite2D
 
 func _ready():
+	sound_player=AudioStreamPlayer.new()
+	sound_player.volume_db=-12
+	add_child(sound_player)
 	visual_scale=sprite.scale
 	visual_position=sprite.position
+	climb_audio=AudioStreamPlayer.new()
+	climb_audio.stream=climb_sound
+	climb_audio.volume_db=-18
+	add_child(climb_audio)
 func _physics_process(delta):
 	indicator.visible=active
 	var near_surface=can_climb_here()
@@ -39,9 +51,11 @@ func _physics_process(delta):
 			velocity.x=direction*speed
 			if Input.is_action_just_pressed("jump") and is_on_floor():
 				velocity.y=jump_velocity
+				play_sound(jump_sound)
 		else:
 			velocity.x=0
 	move_and_slide()
+	update_climbsound()
 	animate_character(delta)
 func can_climb_here()->bool:
 	var climb_group=""
@@ -75,8 +89,22 @@ func animate_character(delta):
 		tilt= sin(animation_time*14)*0.04
 	if grounded and not was_grounded:
 		sprite.scale=visual_scale*Vector2(1.15,0.85)
+		play_sound(land_sound)
 	var smoothing=1-exp(-14.0*delta)
 	sprite.scale=sprite.scale.lerp(target_scale, smoothing)
 	sprite.position=visual_position+Vector2(0, bob)
 	sprite.rotation=lerp_angle(sprite.rotation, tilt, smoothing)
 	was_grounded=grounded
+func play_sound(sound:AudioStream):
+	sound_player.stream=sound
+	sound_player.pitch_scale=randf_range(0.95,1.05)
+	sound_player.play()
+func update_climbsound():
+	var moving_on_surface=(active and climbing and velocity.length()>10)
+	if moving_on_surface:
+		if not climb_audio.playing:
+			climb_audio.play()
+	else:
+		climb_audio.stop()
+func stop_climbsound():
+	climb_audio.stop()
