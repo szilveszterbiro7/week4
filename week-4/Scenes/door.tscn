@@ -25,5 +25,6 @@ offset_left = 4.0
 offset_top = 283.0
 offset_right = 39.0
 offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.03375366, 0.21629253, 0.024730686, 1)
 theme_override_font_sizes/font_size = 25
 text = "5.0"
