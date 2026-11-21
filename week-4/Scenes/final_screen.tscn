@@ -41,11 +41,11 @@ text = "EXIT
 
 [node name="Title" type="Label" parent="." unique_id=189548555]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 19.0
-offset_right = 1011.0
-offset_bottom = 166.0
-theme_override_colors/font_color = Color(0.66827965, 0.1462521, 0.08709327, 1)
+offset_left = 279.0
+offset_top = 31.0
+offset_right = 1016.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.30588236, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_gx7ph")
 theme_override_font_sizes/font_size = 25
 text = "GAME COMPLETE\\You mastered the art of splitting yourself.\\Thank you for playing!"

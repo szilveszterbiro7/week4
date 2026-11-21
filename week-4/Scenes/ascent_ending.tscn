@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d36ql1fmltgaw"]
+
+[ext_resource type="Script" uid="uid://clwmtjcnljhrw" path="res://Scenes/final_screen.gd" id="1_oy520"]
+[ext_resource type="Texture2D" uid="uid://cmsvc07rr6ymw" path="res://Assets/AscentEnd.png" id="2_oy520"]
+
+[sub_resource type="FontVariation" id="FontVariation_gx7ph"]
+
+[node name="FinalScreen" type="Control" unique_id=757220485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oy520")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=856479700]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 723.0
+texture = ExtResource("2_oy520")
+expand_mode = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=47883373]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 451.0
+offset_right = 927.0
+offset_bottom = 603.0
+theme_override_constants/separation = 50
+
+[node name="MainMenu" type="Button" parent="MenuButtons" unique_id=1117387781]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="Exit" type="Button" parent="MenuButtons" unique_id=1626470474]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "EXIT
+"
+
+[node name="Title" type="Label" parent="." unique_id=189548555]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 266.0
+offset_right = 1045.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_gx7ph")
+theme_override_font_sizes/font_size = 25
+text = "ASCENT COMPLETE\\Two halves. One peak.\\And you managed to climb it!\\Thank you for playing!"
+horizontal_alignment = 1
+paragraph_separator = "\\"
