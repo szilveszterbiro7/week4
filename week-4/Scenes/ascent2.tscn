@@ -23,7 +23,7 @@ size = Vector2(26, 553.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45538"]
 size = Vector2(249, 44)
 
-[node name="Ascent1" type="Node2D" unique_id=43157250]
+[node name="Ascent2" type="Node2D" unique_id=43157250]
 script = ExtResource("1_c57ah")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=693023837]

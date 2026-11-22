@@ -43,6 +43,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("change_character") and split:
 		switch_clone()
 func split_player():
+	player.stop_climbsound()
 	play_transform_sound(split_sound)
 	split=true
 	clone1.global_position = player.global_position + Vector2(-20, 0)

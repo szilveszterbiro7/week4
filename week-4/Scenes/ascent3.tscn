@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xmtdx5e5rg6w" path="res://Scenes/door.tscn" id="6_11ox7"]
 [ext_resource type="PackedScene" uid="uid://8s224681l7qj" path="res://Scenes/pressureplate.tscn" id="7_178ax"]
 [ext_resource type="PackedScene" uid="uid://3xvfopas1u0d" path="res://Scenes/exit_gate.tscn" id="8_71vrs"]
-[ext_resource type="PackedScene" uid="uid://d36ql1fmltgaw" path="res://Scenes/ascent_ending.tscn" id="9_8bwxx"]
+[ext_resource type="PackedScene" uid="uid://cklf77dfppxup" path="res://Scenes/ascent4.tscn" id="9_8bwxx"]
 [ext_resource type="PackedScene" uid="uid://bj2vhjs201u2" path="res://Scenes/timed_plate.tscn" id="10_8bwxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce5me"]
@@ -30,7 +30,7 @@ size = Vector2(57, 2245)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6n8h"]
 size = Vector2(954, 53)
 
-[node name="Ascent1" type="Node2D" unique_id=43157250]
+[node name="Ascent3" type="Node2D" unique_id=43157250]
 script = ExtResource("1_30f1a")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=693023837]

@@ -20,6 +20,7 @@ offset_top = 143.0
 offset_right = 159.0
 offset_bottom = 180.0
 theme_override_colors/font_color = Color(3.3691526e-06, 0.5177499, 0.23148349, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "EXIT"
 horizontal_alignment = 1
