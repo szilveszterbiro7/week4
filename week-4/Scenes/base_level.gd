@@ -30,6 +30,7 @@ func _ready():
 	clone1.get_node("CollisionShape2D").set_deferred("disabled", true)
 	clone2.get_node("CollisionShape2D").set_deferred("disabled", true)
 	update_camera()
+	add_child(preload("res://Scenes/pause_menu.tscn").instantiate())
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cuji4k8nmbmml"]
+
+[ext_resource type="Script" uid="uid://crh2wewqghpp6" path="res://Scenes/pause_menu.gd" id="1_emv3i"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1660970105]
+process_mode = 3
+layer = 50
+script = ExtResource("1_emv3i")
+
+[node name="PanelRoot" type="Control" parent="." unique_id=1065419463]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = 0.0008900915
+
+[node name="ColorRect" type="ColorRect" parent="PanelRoot" unique_id=492990426]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 718.0
+color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[node name="Buttons" type="VBoxContainer" parent="PanelRoot" unique_id=159368375]
+layout_mode = 0
+offset_left = 252.12898
+offset_top = 147.81908
+offset_right = 1051.129
+offset_bottom = 704.4071
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="PanelRoot/Buttons" unique_id=1727946368]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="PanelRoot/Buttons" unique_id=864582217]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RESUME"
+
+[node name="Restart" type="Button" parent="PanelRoot/Buttons" unique_id=1395433627]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="PanelRoot/Buttons" unique_id=1895309498]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "BACK TO MENU"

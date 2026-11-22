@@ -8,6 +8,7 @@ var brightness=1
 var brightness_overlay:ColorRect
 
 func _ready():
+	process_mode=Node.PROCESS_MODE_ALWAYS
 	music_player=AudioStreamPlayer.new()
 	music_player.stream=music
 	music_player.volume_db=-22
