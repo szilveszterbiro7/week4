@@ -32,6 +32,7 @@ size = Vector2(954, 53)
 
 [node name="Ascent3" type="Node2D" unique_id=43157250]
 script = ExtResource("1_30f1a")
+level_title = "No Half Left Behind"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=693023837]
 offset_left = -1150.0

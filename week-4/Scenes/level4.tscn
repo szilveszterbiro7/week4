@@ -29,6 +29,7 @@ size = Vector2(42.25, 427.875)
 
 [node name="Level1" type="Node2D" unique_id=43157250]
 script = ExtResource("1_adi6q")
+level_title = "Against the Clock"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=354008618]
 offset_left = -2680.0

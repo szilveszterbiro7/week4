@@ -47,6 +47,7 @@ offset_top = 266.0
 offset_right = 1045.0
 offset_bottom = 413.0
 theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_gx7ph")
 theme_override_font_sizes/font_size = 25
 text = "ASCENT COMPLETE\\Two halves. One peak.\\And you managed to climb it!\\Thank you for playing!"

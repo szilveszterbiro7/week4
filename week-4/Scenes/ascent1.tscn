@@ -26,6 +26,7 @@ size = Vector2(255, 44)
 
 [node name="Ascent1" type="Node2D" unique_id=43157250]
 script = ExtResource("1_45538")
+level_title = "Learning to climb"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=693023837]
 offset_left = -833.0

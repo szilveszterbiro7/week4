@@ -29,6 +29,7 @@ size = Vector2(57, 2245)
 
 [node name="Ascent4" type="Node2D" unique_id=43157250]
 script = ExtResource("1_cpvod")
+level_title = "Together. Above All!"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=693023837]
 offset_left = -1150.0

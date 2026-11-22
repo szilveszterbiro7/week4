@@ -20,6 +20,7 @@ b = Vector2(1285, 4)
 
 [node name="Tutorial" type="Node2D" unique_id=43157250]
 script = ExtResource("1_on4kn")
+level_title = "Tutorial "
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2067702769]
 offset_left = -737.0

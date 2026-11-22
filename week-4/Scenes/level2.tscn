@@ -22,6 +22,7 @@ size = Vector2(250, 39)
 
 [node name="Level2" type="Node2D" unique_id=43157250]
 script = ExtResource("1_lgosu")
+level_title = "Separate ways"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=255442995]
 offset_left = -1783.0
